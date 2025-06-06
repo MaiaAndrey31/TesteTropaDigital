@@ -45,11 +45,7 @@ const DashboardPage = () => {
     { id: "dashboard", icon: <Home size={20} />, label: "Dashboard" },
     { id: "users", icon: <Users size={20} />, label: "Usuários" },
     { id: "products", icon: <ShoppingCart size={20} />, label: "Produtos" },
-    { id: "sales", icon: <DollarSign size={20} />, label: "Vendas" },
-    { id: "reports", icon: <BarChart size={20} />, label: "Relatórios" },
-    { id: "categories", icon: <PieChart size={20} />, label: "Categorias" },
-    { id: "payments", icon: <CreditCard size={20} />, label: "Pagamentos" },
-    { id: "settings", icon: <Settings size={20} />, label: "Configurações" },
+    
   ];
 
   

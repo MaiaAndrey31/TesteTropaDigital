@@ -34,7 +34,6 @@ const ProtectedRoute = ({ children }) => {
   return children;
 };
 
-// Public Route Component (for login, forgot password, etc.)
 const PublicRoute = ({ children }) => {
   const { isAuthenticated, loading } = useAuth();
   const location = useLocation();
@@ -81,15 +80,15 @@ function App() {
               } 
             />
             <Route
-              path="/"
+              path="/admin"
               element={
                 <ProtectedRoute>
                   <DashboardPage />
                 </ProtectedRoute>
               }
             />
-            {/* Add more routes as needed */}
-            <Route path="*" element={<Navigate to="/" replace />} />
+           
+            <Route path="/admin" element={<Navigate to="/admin" replace />} />
           </Routes>
         </Router>
       </AuthProvider>

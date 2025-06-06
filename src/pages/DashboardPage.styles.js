@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 
-
 // Layout Components
+
 export const Layout = styled.div`
   display: flex;
   min-height: 100vh;
@@ -408,6 +408,7 @@ export const SidebarNav = styled.nav`
   flex: 1;
   padding: 0.75rem 0.75rem 1.5rem;
   overflow-y: auto;
+  background: ${({ theme }) => theme.colors.gray[100]};
   
   button {
     display: flex;
@@ -425,17 +426,17 @@ export const SidebarNav = styled.nav`
     transition: all 0.2s ease;
     
     &:hover {
-      background: rgba(255, 255, 255, 0.05);
-      color: #FFFFFF;
+      background: rgba(0, 0, 0, 0.05);
+      color: #1F2937;
     }
     
     &.active {
-      background: #334155;
-      color: #FFFFFF;
+      background: #E5E7EB;
+      color: #1F2937;
       font-weight: 500;
       
       svg {
-        color: #60A5FA;
+        color: #3B82F6;
       }
     }
     
@@ -443,7 +444,7 @@ export const SidebarNav = styled.nav`
       width: 1.25rem;
       height: 1.25rem;
       margin-right: 0.75rem;
-      color: #94A3B8;
+      color: #6B7280;
     }
   }
 `;
@@ -493,17 +494,6 @@ export const SidebarFooter = styled.footer`
   }
 `;
 
-// Stats Components
-export const StatsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: ${({ theme }) => theme.spacing[6]};
-  margin-bottom: ${({ theme }) => theme.spacing[8]};
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    grid-template-columns: 1fr;
-  }
-`;
 
 
 export const ChartHeader = styled.div`
