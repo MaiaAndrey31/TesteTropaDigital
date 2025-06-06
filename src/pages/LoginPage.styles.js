@@ -208,7 +208,7 @@ export const ErrorMessage = styled.p`
 `;
 
 export const IllustrationContainer = styled.div`
-  width: 355.9px;
+  width: 355px;
   height: 478px;
   border-radius: 20px;
   background-color: #cc6237;
@@ -225,7 +225,7 @@ export const ContainerImage = styled.div`
   width: 357px;
   height: 316px;
   bottom: 0;
-  left: -42.8646px;
-  z-index: 190000000000000000;
+  left: -42.26px;
+  z-index: 1;
   
 `;
