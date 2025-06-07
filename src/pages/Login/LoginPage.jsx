@@ -1,7 +1,13 @@
 import React, { useState } from "react";
+
 import { useNavigate, useLocation } from "react-router-dom";
-import useAuth from "../contexts/useAuth";
+
+import useAuth from "../../contexts/useAuth";
+
 import { Mail, Lock, Eye, EyeOff } from "lucide-react";
+
+import Logotipo from "../../assets/logo.svg";
+
 import {
   PageContainer,
   LoginContainer,
@@ -21,7 +27,6 @@ import {
   IllustrationContainer,
   ContainerImage,
 } from "./LoginPage.styles";
-import Logotipo from "../assets/logo.svg";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -47,7 +52,7 @@ const LoginPage = () => {
       const result = await login({ email, password });
 
       if (result && result.success) {
-        navigate(from || "/dashboard", { replace: true });
+        navigate(from || "/admin/events", { replace: true });
       } else {
         setLoginError(result?.error || "Email ou senha inválidos");
       }

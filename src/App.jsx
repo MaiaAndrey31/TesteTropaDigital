@@ -1,12 +1,19 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
-import { theme } from './styles/theme';
-import { GlobalStyles } from './styles/GlobalStyles';
-import { AuthProvider } from './contexts/AuthContext';
-import useAuth from './contexts/useAuth';
-import LoginPage from './pages/LoginPage';
-import DashboardPage from './pages/DashboardPage';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./styles/theme";
+import { GlobalStyles } from "./styles/GlobalStyles";
+import { AuthProvider } from "./contexts/AuthContext";
+import useAuth from "./contexts/useAuth";
+import LoginPage from "./pages/Login/LoginPage";
+import { AdminLayout } from "./Layout/AdminLayout";
+import { Events } from "./pages/Events";
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -15,13 +22,15 @@ const ProtectedRoute = ({ children }) => {
 
   if (loading) {
     return (
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-        backgroundColor: '#F9FAFB'
-      }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+          backgroundColor: "#F9FAFB",
+        }}
+      >
         <div>Carregando...</div>
       </div>
     );
@@ -40,13 +49,15 @@ const PublicRoute = ({ children }) => {
 
   if (loading) {
     return (
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-        backgroundColor: '#F9FAFB'
-      }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+          backgroundColor: "#F9FAFB",
+        }}
+      >
         <div>Carregando...</div>
       </div>
     );
@@ -67,28 +78,36 @@ function App() {
         <Router
           future={{
             v7_startTransition: true,
-            v7_relativeSplatPath: true
+            v7_relativeSplatPath: true,
           }}
         >
           <Routes>
-            <Route 
-              path="/login" 
+            <Route
+              path="/"
+              element={
+                <ProtectedRoute>
+                  <Navigate to="/admin/events" replace />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/login"
               element={
                 <PublicRoute>
                   <LoginPage />
                 </PublicRoute>
-              } 
-            />
-            <Route
-              path="/admin"
-              element={
-                <ProtectedRoute>
-                  <DashboardPage />
-                </ProtectedRoute>
               }
             />
-           
-            <Route path="/admin" element={<Navigate to="/admin" replace />} />
+            <Route path="/admin/events" element={<AdminLayout />}>
+              <Route
+                path="/admin/events"
+                element={
+                  <ProtectedRoute>
+                    <Events />
+                  </ProtectedRoute>
+                }
+              />
+            </Route>
           </Routes>
         </Router>
       </AuthProvider>

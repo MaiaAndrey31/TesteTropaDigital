@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { theme } from './theme';
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -14,7 +15,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background: ${({ theme }) => theme.colors?.background?.light || '#F9FAFB'};
     color: ${({ theme }) => theme.colors?.text?.primary || '#111827'};
     line-height: 1.6;    
@@ -42,7 +43,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   button, input, textarea, select {
-    font-family: inherit;
+    font-family: "Roboto", sans-serif;
     font-size: 1rem;
   }
 
@@ -64,7 +65,7 @@ export const GlobalStyles = createGlobalStyle`
     
     &:focus {
       outline: none;
-      border-color: #4F46E5;
+      border-color:${theme.colors.primary[600]};
       box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
     }
     
@@ -74,16 +75,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
 
-  a {
-    color: ${({ theme }) => theme.colors?.primary?.main || '#4F46E5'};
-    text-decoration: none;
-    transition: color 0.2s;
-    
-    &:hover {
-      color: ${({ theme }) => theme.colors?.primary?.dark || '#4338CA'};
-      text-decoration: underline;
-    }
-  }
+  
 
 
   ul, ol {

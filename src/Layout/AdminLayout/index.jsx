@@ -1,13 +1,11 @@
-import { Outlet, Navigate } from 'react-router-dom'
-import { SideMenu } from '../../components'
+import { Outlet } from 'react-router-dom'
+import { SideMenu } from '../../components/SideMenu'
 import { Container } from './styles'
 
 export function AdminLayout() {
-  const { admin: isAdmin } = JSON.parse(
-    localStorage.getItem('monsterburguer: userData')
-  )
+  
 
-  return isAdmin ? (
+  return  (
     <Container>
       <SideMenu />
       <main>
@@ -16,7 +14,5 @@ export function AdminLayout() {
         </section>
       </main>
     </Container>
-  ) : (
-    <Navigate to="/login" />
-  )
+  ) 
 }

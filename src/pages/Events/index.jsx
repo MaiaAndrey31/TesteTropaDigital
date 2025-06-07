@@ -1,117 +1,192 @@
-import { useEffect, useState } from 'react'
-import { api } from '../../../services/api'
-import Table from '@mui/material/Table'
-import TableBody from '@mui/material/TableBody'
-import TableCell from '@mui/material/TableCell'
-import TableContainer from '@mui/material/TableContainer'
-import TableHead from '@mui/material/TableHead'
-import TableRow from '@mui/material/TableRow'
-import Paper from '@mui/material/Paper'
-import { CheckCircle, Pencil, XCircle } from '@phosphor-icons/react'
-import { Container, EditButton, ProductImage } from './styles'
-import { theme } from '../../../styles/theme'
-import { formatPrice } from '../../../utils/formatPrice'
-import { useNavigate } from 'react-router-dom'
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import { theme } from "../../styles/theme";
+import { CircleIcon, Pencil } from "@phosphor-icons/react";
+import { Container, EditButton } from "./styles";
+import { useNavigate } from "react-router-dom";
 
 export function Events() {
-  const [products, setProducts] = useState([])
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    async function LoadProducts() {
-      const { data } = await api.get('/products')
-      setProducts(data)
+  const events = [
+    {
+      id: 1,
+      name: "Campeonato Regional de Futebol",
+      teams: [
+        "Time A",
+        "Time B",
+        "Time C",
+        "Time D",
+        "Time E",
+        "Time F",
+        "Time G",
+        "Time H",
+        "Time I",
+        "Time J",
+      ],
+      status: "ativo",
+      date: "2025-06-25",
+    },
+    {
+      id: 2,
+      name: "Torneio de Vôlei Interescolar",
+      teams: ["Escola Azul", "Escola Roxa", "Escola Vermelha", "Escola Verde"],
+      status: "inativo",
+      date: "2025-05-28",
+    },
+    {
+      id: 3,
+      name: "Desafio de Basquete Juvenil",
+      teams: ["Lobos", "Águias"],
+      status: "ativo",
+      date: "2025-08-07",
+    },
+    {
+      id: 4,
+      name: "Copa Municipal de Handebol",
+      teams: ["Equipe Norte", "Equipe Sul", "Equipe Leste", "Equipe Oeste"],
+      status: "ativo",
+      date: "2025-06-22",
+    },
+    {
+      id: 5,
+      name: "Festival de Esportes de Areia",
+      teams: ["Praianos", "Areia Branca"],
+      status: "inativo",
+      date: "2025-06-01",
+    },
+  ];
+
+  function IsActive(status) {
+    if (status === "ativo") {
+      return (
+        <>
+          <CircleIcon
+            size={20}
+            weight="fill"
+            color={`${theme.colors.success[500]}`}
+            
+          />
+          <span>Ativo</span>
+        </>
+      );
+    } else {
+      return (
+        <>
+          
+          <CircleIcon
+            size={20}
+            weight="fill"
+            color={`${theme.colors.error[500]}`}
+          />
+          <span>Inativo</span>
+        </>
+      );
     }
-    LoadProducts()
-  }, [])
-
-  function IsOffer(offer){
-    if(offer){
-      return <CheckCircle size={25} color={theme.colors.success} />
-    } else{
-      return <XCircle size={25} color={theme.colors.lightred} />
-    }
-
   }
 
-  function EditProduct(product){
-    navigate('/admin/editproducts', { state: {product} })
-
+  function EditEvent(event) {
+    navigate("/admin/events", { state: { event } });
   }
 
   return (
     <Container>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableHead sx={{ backgroundColor: '#333333' }}>
+          <TableHead sx={{ backgroundColor: `${theme.colors.gray[100]}` }}>
             <TableRow>
               <TableCell
-                sx={{ color: `${theme.colors.light}`, fontWeight: 600 }}
+                sx={{ color: `${theme.colors.primary[500]}`, fontWeight: 600 }}
               >
-                Nome
+                Nome do Evento
               </TableCell>
               <TableCell
-                sx={{ color: `${theme.colors.light}`, fontWeight: 600 }}
+                sx={{ color: `${theme.colors.primary[500]}`, fontWeight: 600 }}
                 align="center"
               >
-                Preço
+                Total de Equipes
               </TableCell>
               <TableCell
-                sx={{ color: `${theme.colors.light}`, fontWeight: 600 }}
+                sx={{ color: `${theme.colors.primary[500]}`, fontWeight: 600 }}
                 align="center"
               >
-                Produto em Oferta
+                Status
               </TableCell>
               <TableCell
-                sx={{ color: `${theme.colors.light}`, fontWeight: 600 }}
+                sx={{ color: `${theme.colors.primary[500]}`, fontWeight: 600 }}
                 align="center"
               >
-                Imagem
+                Data
               </TableCell>
               <TableCell
-                sx={{ color: `${theme.colors.light}`, fontWeight: 600 }}
+                sx={{ color: `${theme.colors.primary[500]}`, fontWeight: 600 }}
                 align="center"
-              >
-                Editar
-              </TableCell>
+              ></TableCell>
             </TableRow>
           </TableHead>
-          <TableBody sx={{ backgroundColor: `${theme.colors.darktext}` }}>
-            {products.map((product) => (
+          <TableBody sx={{ backgroundColor: `${theme.colors.gray[100]}` }}>
+            {events.map((event) => (
               <TableRow
-                key={product.id}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                key={event.id}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell
-                  sx={{ color: `${theme.colors.light}`, fontWeight: 600, fontSize: '18px' }}
+                  sx={{
+                    color: `${theme.colors.gray[700]}`,
+                    fontWeight: 200,
+                    fontSize: "14px",
+                  }}
                   component="th"
                   scope="row"
                 >
-                  {product.name}
+                  {event.name}
                 </TableCell>
                 <TableCell
-                  sx={{ color: `${theme.colors.light}`, fontWeight: 600, fontSize: '18px' }}
+                  sx={{
+                    color: `${theme.colors.gray[700]}`,
+                    fontWeight: 200,
+                    fontSize: "14px",
+                  }}
                   align="center"
                 >
-                  {formatPrice(product.price) }
+                  {event.teams.length}
                 </TableCell>
                 <TableCell
-                  sx={{ color: `${theme.colors.light}`, fontWeight: 600 }}
+                  sx={{
+                    color: `${theme.colors.gray[700]}`,
+                    fontWeight: 200,
+                    display: "flex",
+                    gap: "5px",
+                    fontSize: "14px",
+                    paddingBottom: "32px",
+                    
+                  }}
                   align="center"
                 >
-                  {IsOffer(product.offer)}
+                  {IsActive(event.status)}
                 </TableCell>
                 <TableCell
-                  sx={{ color: `${theme.colors.light}`, fontWeight: 600 }}
+                  sx={{
+                    color: `${theme.colors.gray[700]}`,
+                    fontWeight: 200,
+                  }}
                   align="center"
                 >
-                  <ProductImage src={product.url} />
+                  {event.date}
                 </TableCell>
                 <TableCell
-                  sx={{ color: `${theme.colors.light}`, fontWeight: 600 }}
+                  sx={{
+                    color: `${theme.colors.gray[700]}`,
+                    fontWeight: 200,
+                  }}
                   align="center"
                 >
-                  <EditButton onClick={() => EditProduct(product)}>
+                  <EditButton onClick={() => EditEvent(event)}>
                     <Pencil />
                   </EditButton>
                 </TableCell>
@@ -121,5 +196,5 @@ export function Events() {
         </Table>
       </TableContainer>
     </Container>
-  )
+  );
 }

@@ -4,22 +4,29 @@ import { theme } from "../../styles/theme"
 export const navLinks = [
     {
         id: 1,
-        label: 'Pedidos',
-        path: '/admin/orders',
+        label: 'DashBoard',
+        path: '/admin',
         icon : <Receipt size={32} color={theme.colors.light} />
 
     },
     {
         id: 2,
-        label: 'Produtos',
-        path: '/admin/products',
+        label: 'Eventos',
+        path: '/admin/events',
         icon : <List size={32} color={theme.colors.light} />
 
     },
     {
         id: 3,
-        label: 'Novo Produto',
-        path: '/admin/newproduct',
+        label: 'Equipes',
+        path: '/admin',
+        icon : <ListPlus size={32} color={theme.colors.light} />
+
+    },
+    {
+        id: 4,
+        label: 'Inscrições',
+        path: '/admin',
         icon : <ListPlus size={32} color={theme.colors.light} />
 
     },

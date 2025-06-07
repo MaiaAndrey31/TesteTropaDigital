@@ -5,7 +5,7 @@ import { theme } from "../../styles/theme";
 
 export const Container = styled.div`
 display: grid;
-grid-template-columns: minmax(220px, 280px) 1fr;
+grid-template-columns: minmax(180px, 180px) 1fr;
 
 main {
     display: flex;
@@ -13,7 +13,7 @@ main {
     flex: 1;
     width: 100%;
     height: 100vh;
-    background-color: ${theme.colors.darktext};
+    background-color: ${theme.colors.gray[100]};
     overflow-y: auto;
 }
 

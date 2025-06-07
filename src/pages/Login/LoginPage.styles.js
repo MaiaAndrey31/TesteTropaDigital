@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import ImageContainer from "../assets/monitoring 1.svg";
+import ImageContainer from "../../assets/monitoring 1.svg";
 
 export const PageContainer = styled.div`
   display: flex;
@@ -220,7 +220,7 @@ export const IllustrationContainer = styled.div`
 `;
 
 export const ContainerImage = styled.div`
-  background-image: url('src/assets/monitoring 1.svg');
+  background-image: url(${ImageContainer});
   position: absolute;
   width: 357px;
   height: 316px;
