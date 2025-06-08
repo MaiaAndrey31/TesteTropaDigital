@@ -24,4 +24,22 @@ section {
     width: 100%;
 
 }
+
+h4 {
+    font-size: 16px;
+    font-weight: 300;
+    color: ${theme.colors.gray[700]};
+    margin: 20px 15px;
+
+    span {
+        font-weight: 600;
+    }
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: ${theme.colors.primary[600]};
+    margin: 0px 15px;
+}
 `

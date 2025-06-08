@@ -220,7 +220,7 @@ export const IllustrationContainer = styled.div`
 `;
 
 export const ContainerImage = styled.div`
-  background-image: url(${ImageContainer});
+  background-image: url("${ImageContainer}");
   position: absolute;
   width: 357px;
   height: 316px;

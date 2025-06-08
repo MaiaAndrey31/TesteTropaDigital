@@ -28,9 +28,9 @@ export const AuthProvider = ({ children }) => {
       if (credentials.email === 'admin@tropadigital.com' && credentials.password === '123456') {
         const userData = {
           id: '1',
-          name: 'Admin',
+          name: 'Amanda Maia',
           email: credentials.email,
-          role: 'admin',
+          role: 'Admin',
         };
         
         setUser(userData);
@@ -54,7 +54,6 @@ export const AuthProvider = ({ children }) => {
   const logout = useCallback(() => {
     setUser(null);
     localStorage.removeItem('tropa_digital_user');
-    // Navigation should be handled by the component that calls logout
     return { success: true };
   }, []);
 

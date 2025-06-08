@@ -14,7 +14,7 @@ export const EditButton = styled.button`
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: ${theme.colors.primary[500]};
+background-color: transparent;
 width: 30px;
 border: none;
 border-radius: 10px;
@@ -23,7 +23,7 @@ transition: all ease 0.4s;
 
 
 > svg {
-    fill: ${theme.colors.gray[700]};
+    fill: ${theme.colors.primary[500]};
     height: 22px;
     width: 22px;
 }

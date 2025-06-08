@@ -6,7 +6,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { theme } from "../../styles/theme";
-import { CircleIcon, Pencil } from "@phosphor-icons/react";
+import { CircleIcon, DotsThreeOutlineVerticalIcon, Pencil } from "@phosphor-icons/react";
 import { Container, EditButton } from "./styles";
 import { useNavigate } from "react-router-dom";
 
@@ -187,7 +187,9 @@ export function Events() {
                   align="center"
                 >
                   <EditButton onClick={() => EditEvent(event)}>
-                    <Pencil />
+                  <DotsThreeOutlineVerticalIcon size={24} weight="fill" />
+
+
                   </EditButton>
                 </TableCell>
               </TableRow>
