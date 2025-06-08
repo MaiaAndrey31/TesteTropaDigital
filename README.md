@@ -1,10 +1,10 @@
 # Dashboard Tropa Digital
 
-Um painel administrativo moderno e responsivo desenvolvido com React, Vite e Styled Components.
+Um painel administrativo moderno e responsivo desenvolvido com React, Vite e Styled Components. O projeto inclui um sistema completo de gerenciamento de eventos com interface intuitiva e design responsivo.
 
 ## 🚀 Visão Geral
 
-Este projeto consiste em um painel administrativo completo com sistema de autenticação, rotas protegidas e interface responsiva. Foi desenvolvido como um teste técnico para a Tropa Digital.
+Este projeto consiste em um painel administrativo completo para gerenciamento de eventos, com sistema de autenticação, rotas protegidas e interface totalmente responsiva. Desenvolvido como um teste técnico para a Tropa Digital, o painel oferece uma experiência de usuário fluida em todos os dispositivos.
 
 ## ✨ Funcionalidades
 
@@ -15,34 +15,73 @@ Este projeto consiste em um painel administrativo completo com sistema de autent
   - Persistência de sessão
 
 - **Dashboard Interativo**
-  - Navegação por menu lateral
-  - Cards de métricas
-  - Tabela de dados
+  - Navegação por menu lateral colapsável
+  - Gerenciamento de eventos
+  - Tabela de dados com paginação
+  - Busca e filtragem em tempo real
   - Design responsivo para todos os dispositivos
+  - Menu mobile otimizado
+  - Transições suaves entre telas
 
 - **Interface Moderna**
-  - Tema escuro/claro
-  - Componentes estilizados
+  - Design System consistente
+  - Componentes reutilizáveis
   - Animações suaves
   - Feedback visual para ações
+  - Ícones intuitivos
+  - Tipografia responsiva
 
 ## 🛠️ Tecnologias Utilizadas
 
 - **Framework Principal**: React 18
 - **Build Tool**: Vite
 - **Roteamento**: React Router v6
-- **Estilização**: Styled Components
-- **Ícones**: Lucide React
+- **Estilização**: Styled Components + CSS-in-JS
+- **Ícones**: Phosphor Icons
+- **UI Components**: Material-UI (MUI)
 - **Gerenciamento de Estado**: Context API + Hooks
 - **Validação de Formulários**: Validação manual
 - **Controle de Versão**: Git
+- **Responsividade**: Mobile-first approach
 
-### Por que essas tecnologias?
+### Destaques Técnicos
 
-- **Vite**: Escolhido por sua velocidade de desenvolvimento e hot module replacement.
-- **Styled Components**: Permite estilização com CSS-in-JS, garantindo componentes estilizados isolados e fáceis de manter.
-- **React Router v6**: Para um sistema de roteamento robusto e intuitivo.
-- **Context API**: Para gerenciamento de estado global da aplicação, especialmente para autenticação.
+- **Arquitetura Modular**: Componentes reutilizáveis e bem estruturados
+- **Design Responsivo**: Layout que se adapta a qualquer tamanho de tela
+- **Otimização de Performance**: Carregamento eficiente de recursos
+- **Acessibilidade**: Navegação por teclado e leitores de tela
+- **Código Limpo**: Padrões de código consistentes e documentação detalhada
+
+### Estrutura do Projeto
+
+```
+src/
+├── components/       # Componentes reutilizáveis
+├── contexts/         # Contextos da aplicação
+├── hooks/            # Hooks personalizados
+├── Layout/           # Layouts da aplicação
+├── pages/            # Páginas da aplicação
+├── services/         # Serviços e APIs
+├── styles/           # Estilos globais e tema
+└── utils/            # Utilitários e helpers
+```
+
+### Melhorias Recentes
+
+- **Menu Lateral Responsivo**: Agora colapsa automaticamente em dispositivos móveis
+- **Tabela de Eventos**: Paginação e busca aprimoradas
+- **Design System**: Cores e tipografia padronizadas
+- **Performance**: Otimizações de renderização
+- **Experiência Mobile**: Melhorias na usabilidade em telas pequenas
+
+## 🔑 Credenciais de Teste
+
+Para acessar o painel administrativo, utilize as seguintes credenciais:
+
+**Email:** `admin@tropadigital.com`  
+**Senha:** `123456`
+
+> ⚠️ **Importante:** Estas são credenciais de teste. Em um ambiente de produção, certifique-se de usar autenticação segura e armazenamento adequado de senhas.
 
 ## 🚀 Como Executar o Projeto
 
