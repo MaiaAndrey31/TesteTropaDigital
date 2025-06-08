@@ -7,7 +7,6 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check if user is logged in from localStorage on initial load
     const storedUser = localStorage.getItem('tropa_digital_user');
     if (storedUser) {
       try {
