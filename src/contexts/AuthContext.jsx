@@ -24,7 +24,10 @@ export const AuthProvider = ({ children }) => {
     try {
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      if (credentials.email === 'admin@tropadigital.com' && credentials.password === '123456') {
+      const defaultEmail = import.meta.env.VITE_DEFAULT_EMAIL || 'admin@tropadigital.com';
+      const defaultPassword = import.meta.env.VITE_DEFAULT_PASSWORD || '123456';
+      
+      if (credentials.email === defaultEmail && credentials.password === defaultPassword) {
         const userData = {
           id: '1',
           name: 'Amanda Maia',
