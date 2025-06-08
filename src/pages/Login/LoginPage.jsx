@@ -79,10 +79,12 @@ const LoginPage = () => {
             {loginError && <ErrorMessage>{loginError}</ErrorMessage>}
 
             <InputGroup>
+            
               <InputIcon>
                 <Mail size={20} />
               </InputIcon>
               <Input
+                
                 type="email"
                 placeholder="seunome@seuservidor.com"
                 value={email}

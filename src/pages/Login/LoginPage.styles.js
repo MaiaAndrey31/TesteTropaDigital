@@ -107,7 +107,7 @@ export const InputIcon = styled.span`
   align-items: center;
   justify-content: center;
   padding: 0 1rem;
-  color: ${({ theme }) => theme.colors.gray[400]};
+  color: ${({ theme }) => theme.colors.primary[500]};
 `;
 
 export const Input = styled.input`
@@ -129,7 +129,7 @@ export const PasswordToggle = styled.button`
   background: none;
   border: none;
   padding: 0 ${({ theme }) => theme.spacing[4]};
-  color: ${({ theme }) => theme.colors.gray[400]};
+  color: ${({ theme }) => theme.colors.primary[500]};
   cursor: pointer;
   display: flex;
   align-items: center;
