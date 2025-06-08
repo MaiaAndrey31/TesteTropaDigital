@@ -11,7 +11,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@mui/material": "^7.1.1",
+    "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.21",
+    "@mui/styled-engine-sc": "^5.14.21",
     "@phosphor-icons/react": "^2.1.10",
     "lucide-react": "^0.263.1",
     "react": "^18.2.0",
