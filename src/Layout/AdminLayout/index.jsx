@@ -3,7 +3,7 @@ import { SideMenu } from '../../components/SideMenu'
 import { Container } from './styles'
 import useAuth from '../../contexts/useAuth'
 import { useState, useEffect } from 'react'
-import { Menu } from '@phosphor-icons/react'
+import { MenuIcon } from 'lucide-react'
 
 export function AdminLayout() {
   const { user } = useAuth()
@@ -50,7 +50,7 @@ export function AdminLayout() {
             cursor: 'pointer',
           }}
         >
-          <Menu size={24} />
+          <MenuIcon size={24} />
         </button>
       )}
       
